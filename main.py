@@ -53,28 +53,6 @@ df_filtered.to_csv('Cerinta2.csv',index=False)
 #variantele comp principale
 #variantele afisate la consola
 
-# Citire date
-df = pd.read_csv('MiscareaNaturala.csv')
-
-# Selectăm coloanele numerice
-cols_numeric = ['FR', 'IM', 'LE', 'LEF', 'LEM', 'MMR', 'RS']
-data = df[cols_numeric]
-
-# Standardizare date
-scaler = StandardScaler()
-data_standardized = scaler.fit_transform(data)
-
-# Aplicare PCA
-pca = PCA()
-pca.fit(data_standardized)
-
-# Extragem proporția varianței explicate
-explained_variance_ratio = pca.explained_variance_ratio_
-
-# Afișăm rezultatul
-print("Varianta componentelor principale:")
-for var in explained_variance_ratio:
-    print(var)
 
 #pas 1: citire din csv
 df = pd.read_csv('MiscareaNaturala.csv')
